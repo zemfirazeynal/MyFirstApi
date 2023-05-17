@@ -37,7 +37,7 @@ public class MyPractiseController {
             return "404 Not Found!";
     }
 
-    @GetMapping("/name/{number}")
+    @GetMapping("/city/{number}")
     public String myApi2(@PathVariable(name = "number") Integer m) { // or Integer number
 
         switch (m) {
