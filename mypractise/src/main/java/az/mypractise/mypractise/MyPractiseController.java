@@ -25,20 +25,20 @@ public class MyPractiseController {
 
     @GetMapping("/name")
     public String myApi(@RequestParam Long number) {
-        if (number%10==0)
+        if (number % 10 == 0)
             return "Onluq mərtəbəsi";
-         else if (number%100==0)
+        else if (number % 100 == 0)
             return "Yüzlük mərtəbəsi";
-         else if (number%1000==0)
+        else if (number % 1000 == 0)
             return "Minlik mərtəbəsi";
-         else if (number%10000==0)
+        else if (number % 10000 == 0)
             return "On Minlik mərtəbəsi";
-         else
+        else
             return "404 Not Found!";
-        }
+    }
 
-    @GetMapping("/name2/{number2}")
-    public String myApi2(@PathVariable(name = "number2") Integer m) { // or Integer number
+    @GetMapping("/name/{number}")
+    public String myApi2(@PathVariable(name = "number") Integer m) { // or Integer number
 
         switch (m) {
             case 90:
@@ -57,6 +57,35 @@ public class MyPractiseController {
                 return "Shaki";
             default:
                 return "No information found in the database!";
+        }
+    }
+
+    @GetMapping("/month/{day}")
+    public String myApi3(@PathVariable Long day) { // or Integer number
+
+        if (day == 31L) {
+            return "January,\nMarch,\nMay,\nJuly,\nAugust,\nOctober,\nDecember";
+        } else if (day == 30L) {
+            return "April,\nJune,\nSeptember,\nNowember";
+        } else if (day == 28L) {
+            return "February";
+        } else {
+            return "No information found in the database!";
+        }
+    }
+
+    @GetMapping("/squad/{year}")
+    public String myApi3(@PathVariable int year) { // or Integer number
+
+        switch(year){
+            case 1903:
+                return "Beshiktash";
+            case 1905:
+                return "Galatasaray";
+            case 1907:
+                return "FenerBahche";
+            default:
+            return "No information found in the database!";
         }
     }
 }
