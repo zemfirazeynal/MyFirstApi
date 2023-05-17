@@ -25,13 +25,13 @@ public class MyPractiseController {
 
     @GetMapping("/name")
     public String myApi(@RequestParam Long number) {
-        if (number % 10 == 0)
+        if (number/10 == 1)
             return "Onluq mərtəbəsi";
-        else if (number % 100 == 0)
+        else if (number/100 == 1 )
             return "Yüzlük mərtəbəsi";
-        else if (number % 1000 == 0)
+        else if (number/1000 == 1)
             return "Minlik mərtəbəsi";
-        else if (number % 10000 == 0)
+        else if (number/10000 == 1)
             return "On Minlik mərtəbəsi";
         else
             return "404 Not Found!";
@@ -87,5 +87,11 @@ public class MyPractiseController {
             default:
             return "No information found in the database!";
         }
+    }
+
+
+    @PostMapping
+    public String addStudent(@RequestBody String  student){
+        return student;
     }
 }
