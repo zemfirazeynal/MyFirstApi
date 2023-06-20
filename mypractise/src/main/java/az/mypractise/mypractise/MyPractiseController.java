@@ -107,6 +107,26 @@ public class MyPractiseController {
         return "No information found in the database!";
     }
 
+
+    @GetMapping("/cartoonage")
+    public String myApi4(@RequestParam int ages) { // or Integer number
+
+        switch (ages) {
+            case 22:
+                return "Shrek";
+            case 21:
+                return "Ice Age";
+            case 20:
+                return "Finding Nemo, Brother Bear";
+            case 18:
+                return "Madagascar";
+            case 16:
+                return "Cars";
+        }
+        return "No information found in the database!";
+    }
+
+
     @PostMapping
     public String addStudent(@RequestBody String  student){
         
