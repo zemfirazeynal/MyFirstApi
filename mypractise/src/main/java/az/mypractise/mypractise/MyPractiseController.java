@@ -89,9 +89,27 @@ public class MyPractiseController {
         }
     }
 
+    @GetMapping("/cartoon")
+    public String myApi4(@RequestParam Long year) { // or Integer number
+
+
+        if (year == 2001) {
+            return "Shrek";
+        } else if (year == 2002) {
+            return "Ice Age";
+        } else if (year == 2003) {
+            return "Finding Nemo, Brother Bear";
+        } else if (year == 2005) {
+            return "Madagascar";
+        } else if (year == 2007) {
+            return "Cars";
+        }
+        return "No information found in the database!";
+    }
 
     @PostMapping
     public String addStudent(@RequestBody String  student){
+        
         return student;
     }
 }
